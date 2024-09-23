@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paint Customization Tool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Add custom styles for the color preview */
+    #colorPreview {
+      transition: background-color 0.3s;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header (reuse from previous pages) -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-6">
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-xl font-bold text-indigo-600">Paint Company</a>
+        </div>
+        <nav class="hidden md:flex space-x-10">
+          <a href="index.html" class="text-gray-700 hover:text-indigo-600">Home</a>
+          <a href="catalog.html" class="text-gray-700 hover:text-indigo-600">Products</a>
+          <a href="#" class="text-gray-700 hover:text-indigo-600">Services</a>
+          <a href="#" class="text-gray-700 hover:text-indigo-600">About Us</a>
+          <a href="#" class="text-gray-700 hover:text-indigo-600">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Custom Color Mixing Tool Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-8">Create Your Own Paint Color</h2>
+      
+      <!-- Color Preview -->
+      <div id="colorPreview" class="h-64 w-full rounded-lg bg-gray-300 mb-8"></div>
+
+      <!-- Color Mixer Controls -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Red Slider -->
+        <div>
+          <label for="redRange" class="block text-lg font-medium text-gray-700">Red</label>
+          <input id="redRange" type="range" min="0" max="255" value="127" class="w-full mt-2" oninput="updateColor()">
+        </div>
+
+        <!-- Green Slider -->
+        <div>
+          <label for="greenRange" class="block text-lg font-medium text-gray-700">Green</label>
+          <input id="greenRange" type="range" min="0" max="255" value="127" class="w-full mt-2" oninput="updateColor()">
+        </div>
+
+        <!-- Blue Slider -->
+        <div>
+          <label for="blueRange" class="block text-lg font-medium text-gray-700">Blue</label>
+          <input id="blueRange" type="range" min="0" max="255" value="127" class="w-full mt-2" oninput="updateColor()">
+        </div>
+      </div>
+
+      <!-- Custom Color Code Display -->
+      <div class="mt-8 text-center">
+        <h3 class="text-lg font-bold text-gray-900">Selected Color Code: <span id="colorCode" class="text-indigo-600">#7f7f7f</span></h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Ordering Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-gray-900">Order a Sample of Your Custom Color</h2>
+      <p class="mt-2 text-gray-600">Fill out the form below to receive a small sample of your custom paint color.</p>
+
+      <form class="mt-8 max-w-md mx-auto bg-gray-100 p-8 rounded-lg shadow-lg">
+        <!-- Color Code (Read-only) -->
+        <div class="mb-6">
+          <label for="sampleColor" class="block text-lg font-medium text-gray-700">Custom Color Code</label>
+          <input type="text" id="sampleColor" name="sampleColor" class="w-full mt-2 p-3 border border-gray-300 rounded-lg" readonly value="#7f7f7f">
+        </div>
+
+        <!-- Name Input -->
+        <div class="mb-6">
+          <label for="name" class="block text-lg font-medium text-gray-700">Your Name</label>
+          <input type="text" id="name" name="name" class="w-full mt-2 p-3 border border-gray-300 rounded-lg" placeholder="Enter your name">
+        </div>
+
+        <!-- Email Input -->
+        <div class="mb-6">
+          <label for="email" class="block text-lg font-medium text-gray-700">Your Email</label>
+          <input type="email" id="email" name="email" class="w-full mt-2 p-3 border border-gray-300 rounded-lg" placeholder="Enter your email">
+        </div>
+
+        <!-- Address Input -->
+        <div class="mb-6">
+          <label for="address" class="block text-lg font-medium text-gray-700">Shipping Address</label>
+          <textarea id="address" name="address" class="w-full mt-2 p-3 border border-gray-300 rounded-lg" placeholder="Enter your address"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-500">Order Sample</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer (reuse from previous pages) -->
+  <footer class="bg-indigo-600 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between">
+      <div>
+        <h3 class="font-bold text-lg">Paint Company</h3>
+        <p class="mt-2">© 2024 Paint Company. All rights reserved.</p>
+      </div>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+        <a href="#" class="hover:text-gray-300">Terms of Service</a>
+        <a href="#" class="hover:text-gray-300">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script to update color preview -->
+  <script>
+    function updateColor() {
+      const red = document.getElementById('redRange').value;
+      const green = document.getElementById('greenRange').value;
+      const blue = document.getElementById('blueRange').value;
+      
+      const color = `rgb(${red}, ${green}, ${blue})`;
+      const hexColor = `#${parseInt(red).toString(16).padStart(2, '0')}${parseInt(green).toString(16).padStart(2, '0')}${parseInt(blue).toString(16).padStart(2, '0')}`;
+      
+      document.getElementById('colorPreview').style.backgroundColor = color;
+      document.getElementById('colorCode').textContent = hexColor;
+      document.getElementById('sampleColor').value = hexColor;
+    }
+  </script>
+
+</body>
+</html>

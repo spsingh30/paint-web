@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paint Catalog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header Section -->
+<header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-6">
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-xl font-bold text-indigo-600">Paint Company</a> <!-- Homepage -->
+        </div>
+        <nav class="hidden md:flex space-x-10">
+          <a href="index.html" class="text-gray-700 hover:text-indigo-600">Home</a>
+          <a href="catalog.html" class="text-gray-700 hover:text-indigo-600">Products</a> <!-- Product Catalog -->
+          <a href="#" class="text-gray-700 hover:text-indigo-600">Services</a>
+          <a href="#" class="text-gray-700 hover:text-indigo-600">About Us</a>
+          <a href="#" class="text-gray-700 hover:text-indigo-600">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+
+  <!-- Product Catalog Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold text-gray-900">Our Paint Products</h1>
+        <div class="relative">
+          <input type="text" placeholder="Search products..." class="border rounded-lg py-2 px-4 text-gray-600" />
+        </div>
+      </div>
+
+      <!-- Filter Options -->
+      <div class="flex space-x-4 mb-8">
+        <button class="bg-white shadow-md px-4 py-2 rounded-lg">All Types</button>
+        <button class="bg-white shadow-md px-4 py-2 rounded-lg">Interior</button>
+        <button class="bg-white shadow-md px-4 py-2 rounded-lg">Exterior</button>
+        <button class="bg-white shadow-md px-4 py-2 rounded-lg">Eco-Friendly</button>
+        <button class="bg-white shadow-md px-4 py-2 rounded-lg">Glossy</button>
+        <button class="bg-white shadow-md px-4 py-2 rounded-lg">Matte</button>
+        <button class="bg-white shadow-md px-4 py-2 rounded-lg">Satin</button>
+        <button class="bg-white shadow-md px-4 py-2 rounded-lg">Price: Low to High</button>
+      </div>
+
+      <!-- Product List -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Product Card -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <img src="https://example.com/paint.jpg" alt="Paint" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h2 class="text-xl font-bold text-gray-900">Interior Eco-Friendly Paint</h2>
+          <p class="mt-2 text-gray-600">Durable, non-toxic paint for interior walls. Available in multiple finishes.</p>
+          <div class="mt-4">
+            <span class="text-lg font-semibold text-indigo-600">$29.99</span>
+            <button class="ml-4 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg">Add to Cart</button>
+          </div>
+          <!-- Rating -->
+          <div class="flex items-center mt-2">
+            <span class="text-yellow-500">★★★★☆</span>
+            <p class="ml-2 text-gray-600">(25 Reviews)</p>
+          </div>
+        </div>
+
+        <!-- More Product Cards... -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Color Picker Tool -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-gray-900">Visualize Your Colors</h2>
+      <p class="mt-2 text-gray-600">Use our color picker tool to see how different colors will look on your walls.</p>
+      <div class="mt-8">
+        <!-- Placeholder for Color Picker Tool -->
+        <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+          <p class="text-gray-600">Color Picker Tool Coming Soon!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900">Customer Reviews</h2>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <p class="text-gray-600">“The eco-friendly paint is perfect for my home. Great quality and vibrant colors!”</p>
+          <div class="mt-4">
+            <span class="text-yellow-500">★★★★★</span>
+            <p class="text-gray-600">- Jane Doe</p>
+          </div>
+        </div>
+
+        <!-- More Testimonials... -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Reuse from Homepage) -->
+  <footer class="bg-indigo-600 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between">
+      <div>
+        <h3 class="font-bold text-lg">Paint Company</h3>
+        <p class="mt-2">© 2024 Paint Company. All rights reserved.</p>
+      </div>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+        <a href="#" class="hover:text-gray-300">Terms of Service</a>
+        <a href="#" class="hover:text-gray-300">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
